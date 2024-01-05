@@ -1,4 +1,4 @@
-
+    
 import static com.sun.javafx.fxml.expression.Expression.set;
 import static java.lang.reflect.Array.set;
 import java.util.HashSet;
@@ -43,7 +43,7 @@ public class coleccion_hashSet extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText("collecciones sin duplicacion");
+        jLabel1.setText("colecciones sin duplicacion");
 
         lblDato.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblDato.setForeground(new java.awt.Color(102, 0, 0));
@@ -114,22 +114,17 @@ public void datosrepetidos(String cadena){
     Set<Character> cadena1= new HashSet<>();
     Set<Character> caracteresRepetidos = new HashSet<>();
     Set<Character> caracternorepetido= new HashSet<>();
-    String [] cadena2 = cadena.split(cadena);
         for (char caracter : cadena.toCharArray()) {
             if (!cadena1.add(caracter)) {
                 caracteresRepetidos.add(caracter);
             }else{
                 caracternorepetido.add(caracter);
             }
-            /*JOptionPane.showMessageDialog(this, "Los caracteres son: "+caracteresRepetidos);*/
+         
         }
- /*JOptionPane.showMessageDialog(this, "Los caracteres que se repiten son : "+caracteresRepetidos);*/
+ 
     JOptionPane.showMessageDialog(this, "los caracteres son:  "+caracternorepetido);
-        /*if (caracteresRepetidos.isEmpty()) {
-            System.out.println("No hay caracteres duplicados.");
-        } else {
-            System.out.println("Caracteres duplicados: " + caracteresRepetidos);
-        }*/
+       
     
 }
     /**

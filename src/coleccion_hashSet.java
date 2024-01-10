@@ -127,47 +127,6 @@ public void datosrepetidos(String cadena){
        
     
 }
-    /*Set<String> cadena1 = new HashSet<>();
-    Set<String> cadenasNoRepetidos = new HashSet<>();
-
-    for (String caracter : cadena.split(" ")) {
-        if (cadena1.add(caracter)) {
-            cadenasNoRepetidos.add(caracter);
-        }
-    }
-
-    // Construir una cadena de caracteres a partir del conjunto caracteresNoRepetidos
-    StringBuilder resultBuilder = new StringBuilder();
-    for (String c : cadenasNoRepetidos) {
-        resultBuilder.append(c).append(" ");
-    }
-
-    // Obtener la cadena resultante
-    String resultado = resultBuilder.toString().trim();
-
-    JOptionPane.showMessageDialog(this, "Los palabra es : " + resultado);
-}*/
-    /*Set<Integer> cadena1 = new HashSet<>();
-    Set<Integer> enteroNoRepetidos = new HashSet<>();
-
-    for (String caracter : cadena.split("")) {
-        int valorEntero = Integer.parseInt(caracter);
-        if (cadena1.add(valorEntero)) {
-            enteroNoRepetidos.add(valorEntero);
-        }
-    }
-
-    // Construir una cadena de caracteres a partir del conjunto caracteresNoRepetidos
-    StringBuilder resultBuilder = new StringBuilder();
-    for (int c : enteroNoRepetidos) {
-        resultBuilder.append(c).append(" ");
-    }
-
-    // Obtener la cadena resultante
-    String resultado = resultBuilder.toString().trim();
-
-    JOptionPane.showMessageDialog(this, "El numero entero es: " + resultado);
-}*/
     
     /**
      * @param args the command line arguments

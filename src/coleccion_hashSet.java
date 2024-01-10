@@ -111,11 +111,11 @@ public class coleccion_hashSet extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVerificaActionPerformed
 public void datosrepetidos(String cadena){
    
-    Set<Character> cadena1= new HashSet<>();
+    Set<Character> caracter1= new HashSet<>();
     Set<Character> caracteresRepetidos = new HashSet<>();
     Set<Character> caracternorepetido= new HashSet<>();
         for (char caracter : cadena.toCharArray()) {
-            if (!cadena1.add(caracter)) {
+            if (!caracter1.add(caracter)) {
                 caracteresRepetidos.add(caracter);
             }else{
                 caracternorepetido.add(caracter);

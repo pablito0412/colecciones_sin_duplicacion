@@ -16,15 +16,18 @@ import javax.swing.JOptionPane;
  *
  * @author pablo
  */
-public class coleccion_hashSet extends javax.swing.JFrame {
+public class Coleccion_HashSet extends javax.swing.JFrame {
 
     /**
      * Creates new form coleccion_hashSet
      */
-    public coleccion_hashSet() {
+    public Coleccion_HashSet() {
         initComponents();
+     
+
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,10 +37,34 @@ public class coleccion_hashSet extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFrame1 = new javax.swing.JFrame();
+        jFrame2 = new javax.swing.JFrame();
         jLabel1 = new javax.swing.JLabel();
         lblDato = new javax.swing.JLabel();
         txtDato = new javax.swing.JTextField();
         btnVerifica = new javax.swing.JButton();
+
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
+        jFrame2.getContentPane().setLayout(jFrame2Layout);
+        jFrame2Layout.setHorizontalGroup(
+            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jFrame2Layout.setVerticalGroup(
+            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,7 +106,7 @@ public class coleccion_hashSet extends javax.swing.JFrame {
                         .addGap(59, 59, 59)
                         .addComponent(txtDato, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(196, 196, 196)
+                        .addGap(188, 188, 188)
                         .addComponent(btnVerifica)))
                 .addContainerGap(137, Short.MAX_VALUE))
         );
@@ -92,9 +119,9 @@ public class coleccion_hashSet extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDato, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtDato, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(97, 97, 97)
-                .addComponent(btnVerifica)
-                .addContainerGap(203, Short.MAX_VALUE))
+                .addGap(51, 51, 51)
+                .addComponent(btnVerifica, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(228, Short.MAX_VALUE))
         );
 
         pack();
@@ -110,23 +137,24 @@ public class coleccion_hashSet extends javax.swing.JFrame {
         this.datosrepetidos(cadena);
     }//GEN-LAST:event_btnVerificaActionPerformed
 public void datosrepetidos(String cadena){
-   
-    Set<Character> caracter1= new HashSet<>();
-    Set<Character> caracteresRepetidos = new HashSet<>();
-    Set<Character> caracternorepetido= new HashSet<>();
-        for (char caracter : cadena.toCharArray()) {
-            if (!caracter1.add(caracter)) {
-                caracteresRepetidos.add(caracter);
-            }else{
-                caracternorepetido.add(caracter);
+        Set<String> palabra1 = new HashSet<>();
+        Set<String> palabrasRepetidas = new HashSet<>();
+        Set<String> palabrasNoRepetidas = new HashSet<>();
+
+        String[] palabras = cadena.split("\\s+"); // Dividir la cadena en palabras
+
+        for (String palabra : palabras) {
+            if (!palabra1.add(palabra)) {
+                palabrasRepetidas.add(palabra);
+            } else {
+                palabrasNoRepetidas.add(palabra);
             }
-         
         }
- 
-    JOptionPane.showMessageDialog(this, "los caracteres son:  "+caracternorepetido);
+
+  
+        JOptionPane.showMessageDialog(this, "Palabras no repetidas: " + palabrasNoRepetidas);
        
-    
-}
+    }
     
     /**
      * @param args the command line arguments
@@ -145,26 +173,28 @@ public void datosrepetidos(String cadena){
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(coleccion_hashSet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Coleccion_HashSet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(coleccion_hashSet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Coleccion_HashSet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(coleccion_hashSet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Coleccion_HashSet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(coleccion_hashSet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Coleccion_HashSet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new coleccion_hashSet().setVisible(true);
+                new Coleccion_HashSet().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVerifica;
+    private javax.swing.JFrame jFrame1;
+    private javax.swing.JFrame jFrame2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblDato;
     private javax.swing.JTextField txtDato;

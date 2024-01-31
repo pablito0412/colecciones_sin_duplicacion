@@ -1,11 +1,11 @@
     
-import static com.sun.javafx.fxml.expression.Expression.set;
 import static java.lang.reflect.Array.set;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.LinkedHashSet;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -23,8 +23,7 @@ public class Coleccion_HashSet extends javax.swing.JFrame {
      */
     public Coleccion_HashSet() {
         initComponents();
-     
-
+    
     }
 
     
@@ -39,10 +38,15 @@ public class Coleccion_HashSet extends javax.swing.JFrame {
 
         jFrame1 = new javax.swing.JFrame();
         jFrame2 = new javax.swing.JFrame();
+        escritorio = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        lblDato = new javax.swing.JLabel();
         txtDato = new javax.swing.JTextField();
-        btnVerifica = new javax.swing.JButton();
+        lblDato = new javax.swing.JLabel();
+        btnAgregar = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtListas = new javax.swing.JTextArea();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -72,56 +76,108 @@ public class Coleccion_HashSet extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setText("colecciones sin duplicacion");
 
-        lblDato.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        lblDato.setForeground(new java.awt.Color(102, 0, 0));
-        lblDato.setText("ingrese los datos");
-
         txtDato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDatoActionPerformed(evt);
             }
         });
 
-        btnVerifica.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnVerifica.setForeground(new java.awt.Color(255, 0, 0));
-        btnVerifica.setText("VERIFICAR");
-        btnVerifica.addActionListener(new java.awt.event.ActionListener() {
+        lblDato.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lblDato.setForeground(new java.awt.Color(102, 0, 0));
+        lblDato.setText("ingrese los datos");
+
+        btnAgregar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnAgregar.setForeground(new java.awt.Color(255, 0, 0));
+        btnAgregar.setText("AGREGAR");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVerificaActionPerformed(evt);
+                btnAgregarActionPerformed(evt);
             }
         });
+
+        btnLimpiar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnLimpiar.setForeground(new java.awt.Color(255, 0, 51));
+        btnLimpiar.setText("LIMPIAR");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
+
+        btnEliminar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(255, 0, 51));
+        btnEliminar.setText("ELIMINAR");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+
+        txtListas.setColumns(20);
+        txtListas.setRows(5);
+        jScrollPane1.setViewportView(txtListas);
+
+        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
+        escritorio.setLayout(escritorioLayout);
+        escritorioLayout.setHorizontalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(escritorioLayout.createSequentialGroup()
+                .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(escritorioLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(lblDato)
+                        .addGap(58, 58, 58)
+                        .addComponent(txtDato, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(escritorioLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(118, 118, 118)
+                .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                        .addComponent(btnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(140, Short.MAX_VALUE))
+            .addGroup(escritorioLayout.createSequentialGroup()
+                .addGap(269, 269, 269)
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        escritorioLayout.setVerticalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(escritorioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(escritorioLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblDato, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtDato, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(206, 206, 206))
+                    .addGroup(escritorioLayout.createSequentialGroup()
+                        .addGap(180, 180, 180)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(lblDato)
-                        .addGap(59, 59, 59)
-                        .addComponent(txtDato, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(188, 188, 188)
-                        .addComponent(btnVerifica)))
-                .addContainerGap(137, Short.MAX_VALUE))
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel1)
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDato, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDato, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
-                .addComponent(btnVerifica, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(228, Short.MAX_VALUE))
+                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 16, Short.MAX_VALUE))
         );
 
         pack();
@@ -131,31 +187,62 @@ public class Coleccion_HashSet extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDatoActionPerformed
 
-    private void btnVerificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificaActionPerformed
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
         String cadena = txtDato.getText();
         this.datosrepetidos(cadena);
-    }//GEN-LAST:event_btnVerificaActionPerformed
+        
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+        String cadena = txtDato.getText();
+
+    // Eliminar la palabra del JTextArea
+    eliminarPalabra(txtListas, cadena);
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        // TODO add your handling code here:
+        limpiarJTextArea();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
 public void datosrepetidos(String cadena){
-        Set<String> palabra1 = new HashSet<>();
-        Set<String> palabrasRepetidas = new HashSet<>();
-        Set<String> palabrasNoRepetidas = new HashSet<>();
-
+        Set<String> listadoh= new HashSet<>();
         String[] palabras = cadena.split("\\s+"); // Dividir la cadena en palabras
-
+       String repetidas="";
         for (String palabra : palabras) {
-            if (!palabra1.add(palabra)) {
-                palabrasRepetidas.add(palabra);
+            if (!listadoh.add(palabra)) {
+                repetidas+=palabra;
             } else {
-                palabrasNoRepetidas.add(palabra);
+                listadoh.add(palabra);
             }
         }
 
-  
-        JOptionPane.showMessageDialog(this, "Palabras no repetidas: " + palabrasNoRepetidas);
-       
+  txtListas.append(listadoh.toString());
+  txtDato.setText("");
+        //JOptionPane.showMessageDialog(this, "Palabras repetidas es : " + repetidas);
+      
     }
+public void eliminarPalabra(JTextArea textArea, String palabraEliminar) {
+    // Obtener el texto actual del JTextArea
+    String textoActual = txtListas.getText();
+
+    // Reemplazar la palabra a eliminar con una cadena vacía
+    String nuevoTexto = textoActual.replace(palabraEliminar, "");
+
+    // Actualizar el JTextArea con el nuevo texto
+    txtListas.setText(nuevoTexto);
+
+    // Limpiar el JTextField
+    txtDato.setText("");
+}
+
+public void limpiarJTextArea() {
+    // Limpiar el JTextArea
+    txtListas.setText("");
+}
     
+
     /**
      * @param args the command line arguments
      */
@@ -192,11 +279,16 @@ public void datosrepetidos(String cadena){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnVerifica;
+    private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JPanel escritorio;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblDato;
     private javax.swing.JTextField txtDato;
+    private javax.swing.JTextArea txtListas;
     // End of variables declaration//GEN-END:variables
 }
